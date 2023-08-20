@@ -1,0 +1,328 @@
+-- MySQL dump 10.13  Distrib 5.7.23, for macos10.13 (x86_64)
+--
+-- Host: 127.0.0.1    Database: PGSD
+-- ------------------------------------------------------
+-- Server version	5.7.37
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `Tbl_Akun`
+--
+
+DROP TABLE IF EXISTS `Tbl_Akun`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Tbl_Akun` (
+  `id` int(11) NOT NULL,
+  `Nama` varchar(255) DEFAULT NULL,
+  `User` varchar(255) DEFAULT NULL,
+  `Pass` varchar(255) DEFAULT NULL,
+  `Level` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Tbl_Akun`
+--
+
+LOCK TABLES `Tbl_Akun` WRITE;
+/*!40000 ALTER TABLE `Tbl_Akun` DISABLE KEYS */;
+INSERT INTO `Tbl_Akun` VALUES (1,'Administrator','Admin','Admin','Admin');
+/*!40000 ALTER TABLE `Tbl_Akun` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Tbl_Evaluasi`
+--
+
+DROP TABLE IF EXISTS `Tbl_Evaluasi`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Tbl_Evaluasi` (
+  `Id` int(11) NOT NULL,
+  `Soal` text,
+  `A` text,
+  `B` text,
+  `C` text,
+  `D` text,
+  `Kunci` varchar(1) DEFAULT NULL,
+  `Jenis` varchar(1) DEFAULT NULL,
+  `Gambar` text,
+  `Tanggal` date DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Tbl_Evaluasi`
+--
+
+LOCK TABLES `Tbl_Evaluasi` WRITE;
+/*!40000 ALTER TABLE `Tbl_Evaluasi` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Tbl_Evaluasi` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Tbl_Indikator`
+--
+
+DROP TABLE IF EXISTS `Tbl_Indikator`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Tbl_Indikator` (
+  `Id` int(11) NOT NULL,
+  `Judul` text,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Tbl_Indikator`
+--
+
+LOCK TABLES `Tbl_Indikator` WRITE;
+/*!40000 ALTER TABLE `Tbl_Indikator` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Tbl_Indikator` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Tbl_Indikator_Isi`
+--
+
+DROP TABLE IF EXISTS `Tbl_Indikator_Isi`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Tbl_Indikator_Isi` (
+  `Id` int(11) NOT NULL,
+  `Isi` text,
+  `Id_Indikator` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Tbl_Indikator_Isi`
+--
+
+LOCK TABLES `Tbl_Indikator_Isi` WRITE;
+/*!40000 ALTER TABLE `Tbl_Indikator_Isi` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Tbl_Indikator_Isi` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Tbl_Judul`
+--
+
+DROP TABLE IF EXISTS `Tbl_Judul`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Tbl_Judul` (
+  `Id` int(11) NOT NULL,
+  `Judul` text,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Tbl_Judul`
+--
+
+LOCK TABLES `Tbl_Judul` WRITE;
+/*!40000 ALTER TABLE `Tbl_Judul` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Tbl_Judul` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Tbl_Kompetensi`
+--
+
+DROP TABLE IF EXISTS `Tbl_Kompetensi`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Tbl_Kompetensi` (
+  `Id` int(11) NOT NULL,
+  `Judul` text,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Tbl_Kompetensi`
+--
+
+LOCK TABLES `Tbl_Kompetensi` WRITE;
+/*!40000 ALTER TABLE `Tbl_Kompetensi` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Tbl_Kompetensi` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Tbl_Kompetensi_Isi`
+--
+
+DROP TABLE IF EXISTS `Tbl_Kompetensi_Isi`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Tbl_Kompetensi_Isi` (
+  `Id` int(11) NOT NULL,
+  `Isi` text,
+  `Id_Kompetensi` int(11) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Tbl_Kompetensi_Isi`
+--
+
+LOCK TABLES `Tbl_Kompetensi_Isi` WRITE;
+/*!40000 ALTER TABLE `Tbl_Kompetensi_Isi` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Tbl_Kompetensi_Isi` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Tbl_Materi`
+--
+
+DROP TABLE IF EXISTS `Tbl_Materi`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Tbl_Materi` (
+  `id` int(11) NOT NULL,
+  `Judul` text,
+  `Deskripsi` text,
+  `Tujuan` varchar(255) DEFAULT NULL,
+  `Bahan` text,
+  `Evaluasi` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Tbl_Materi`
+--
+
+LOCK TABLES `Tbl_Materi` WRITE;
+/*!40000 ALTER TABLE `Tbl_Materi` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Tbl_Materi` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Tbl_Profile`
+--
+
+DROP TABLE IF EXISTS `Tbl_Profile`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Tbl_Profile` (
+  `Id` int(11) NOT NULL,
+  `Nama` varchar(255) DEFAULT NULL,
+  `Nim` int(11) DEFAULT NULL,
+  `Agama` varchar(255) DEFAULT NULL,
+  `Tempat` varchar(255) DEFAULT NULL,
+  `Lahir` date DEFAULT NULL,
+  `Kelamin` varchar(50) DEFAULT NULL,
+  `Cita` varchar(255) DEFAULT NULL,
+  `Hobi` varchar(255) DEFAULT NULL,
+  `Motto` varchar(255) DEFAULT NULL,
+  `SD` varchar(255) DEFAULT NULL,
+  `SD_T` varchar(4) DEFAULT NULL,
+  `SD_A` varchar(4) DEFAULT NULL,
+  `SMP` varchar(255) DEFAULT NULL,
+  `SMP_T` varchar(4) DEFAULT NULL,
+  `SMP_A` varchar(4) DEFAULT NULL,
+  `SMA` varchar(255) DEFAULT NULL,
+  `SMA_T` varchar(4) DEFAULT NULL,
+  `SMA_A` varchar(4) DEFAULT NULL,
+  `S1` varchar(255) DEFAULT NULL,
+  `S1_T` varchar(4) DEFAULT NULL,
+  `S1_A` varchar(4) DEFAULT NULL,
+  `Motivasi` text,
+  `Photo` text,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Tbl_Profile`
+--
+
+LOCK TABLES `Tbl_Profile` WRITE;
+/*!40000 ALTER TABLE `Tbl_Profile` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Tbl_Profile` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Tbl_Tujuan`
+--
+
+DROP TABLE IF EXISTS `Tbl_Tujuan`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Tbl_Tujuan` (
+  `Id` int(11) NOT NULL,
+  `Judul` text,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Tbl_Tujuan`
+--
+
+LOCK TABLES `Tbl_Tujuan` WRITE;
+/*!40000 ALTER TABLE `Tbl_Tujuan` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Tbl_Tujuan` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Tbl_User`
+--
+
+DROP TABLE IF EXISTS `Tbl_User`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Tbl_User` (
+  `Id` int(11) NOT NULL,
+  `Nama` varchar(255) DEFAULT NULL,
+  `Sekolah` varchar(255) DEFAULT NULL,
+  `Skor` int(11) DEFAULT NULL,
+  `Tanggal` date DEFAULT NULL,
+  `C` date DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Tbl_User`
+--
+
+LOCK TABLES `Tbl_User` WRITE;
+/*!40000 ALTER TABLE `Tbl_User` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Tbl_User` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'PGSD'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-08-20 17:07:47
