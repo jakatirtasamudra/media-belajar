@@ -12,7 +12,7 @@
 
     function base_url () {
 
-        @$base_url  = 'http://s1.test/';
+        @$base_url  = 'http://media-belajar.test/';
 
         return @$base_url;
 
@@ -22,7 +22,7 @@
 
     function nama_url () {
 
-        @$nama_url  = 'Skripsi';
+        @$nama_url  = 'Media Belajar';
 
         return @$nama_url;
 
